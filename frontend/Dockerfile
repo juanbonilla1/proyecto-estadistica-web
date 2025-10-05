@@ -1,6 +1,10 @@
 FROM nginx:alpine
 
-COPY . /usr/share/nginx/html
+# Copiar archivos estáticos
+COPY index.html styles.css script.js /usr/share/nginx/html/
+
+# Copiar configuración de Nginx
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
