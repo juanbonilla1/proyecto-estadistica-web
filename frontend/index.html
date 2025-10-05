@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analizador Estadístico</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Analizador Estadístico</h1>
+            <p>Herramienta web para análisis estadístico de datos</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Sección de entrada de datos -->
+            <section class="data-input">
+                <h2>Ingreso de Datos</h2>
+                <div class="input-group">
+                    <textarea id="datosInput" placeholder="Ingrese los números separados por comas o espacios. Ej: 1, 2, 3, 4, 5"></textarea>
+                    <button onclick="cargarDatos()" class="btn-primary">Cargar Datos</button>
+                </div>
+                <div id="datosInfo" class="info-box"></div>
+            </section>
+
+            <!-- Sección de resultados -->
+            <section class="results">
+                <h2>Análisis Estadístico</h2>
+                
+                <div class="controls">
+                    <button onclick="obtenerEstadisticas()" class="btn-secondary">Calcular Todas las Estadísticas</button>
+                    <button onclick="obtenerTendenciaCentral()" class="btn-secondary">Solo Tendencia Central</button>
+                    <button onclick="obtenerDispersion()" class="btn-secondary">Solo Dispersión</button>
+                </div>
+
+                <div id="resultados" class="results-container">
+                    <!-- Los resultados se mostrarán aquí -->
+                </div>
+            </section>
+
+            <!-- Sección de gráficos -->
+            <section class="charts">
+                <h2>Visualizaciones</h2>
+                
+                <div class="chart-controls">
+                    <button onclick="generarGrafico('histograma')" class="btn-chart">Histograma</button>
+                    <button onclick="generarGrafico('boxplot')" class="btn-chart">Diagrama de Caja</button>
+                    <button onclick="generarGrafico('dispersion')" class="btn-chart">Gráfico de Dispersión</button>
+                    <button onclick="generarGrafico('violin')" class="btn-chart">Diagrama de Violín</button>
+                    <button onclick="generarGrafico('qq')" class="btn-chart">Gráfico Q-Q</button>
+                </div>
+
+                <div id="graficoContainer" class="chart-container">
+                    <img id="graficoImagen" style="display: none;" alt="Gráfico generado">
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
